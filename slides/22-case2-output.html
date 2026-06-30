@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>22 · 输出样例</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+  }
+  .top-area {
+    margin-bottom: 8px;
+  }
+  h2 {
+    font-size: 64px;
+    margin-bottom: 16px;
+  }
+  .subtitle {
+    font-size: 28px;
+    color: var(--ink-muted);
+    font-style: normal;
+  }
+  .output-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .output-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(28,27,24,0.05);
+  }
+  .output-card .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .output-card .card-title {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .output-card .badge {
+    font-family: var(--font-en);
+    font-size: var(--tiny);
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 6px;
+    background: var(--accent-pale);
+    color: var(--accent-dark);
+  }
+  .output-card .badge.high {
+    background: var(--accent);
+    color: #fff;
+  }
+  .output-card .badge.medium {
+    background: var(--highlight);
+    color: var(--ink-secondary);
+  }
+  .output-card .badge.low {
+    background: var(--paper-warm);
+    color: var(--ink-muted);
+  }
+  .opportunity-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .opportunity-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: var(--small);
+    line-height: 1.55;
+    color: var(--ink-secondary);
+  }
+  .opportunity-list .rank {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: var(--accent-pale);
+    color: var(--accent-dark);
+    font-family: var(--font-en);
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .opportunity-list .rank.top {
+    background: var(--accent);
+    color: #fff;
+  }
+  .opportunity-list .detail {
+    font-size: var(--tiny);
+    color: var(--ink-muted);
+    margin-top: 4px;
+  }
+  .risk-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--small);
+  }
+  .risk-table th {
+    text-align: left;
+    padding: 10px 12px;
+    color: var(--ink-muted);
+    font-weight: 600;
+    border-bottom: 1px solid var(--line);
+  }
+  .risk-table td {
+    padding: 12px;
+    color: var(--ink-secondary);
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  .risk-table .risk-high { color: var(--accent); font-weight: 600; }
+  .risk-table .risk-medium { color: var(--ink-secondary); }
+  .risk-table .risk-low { color: var(--ink-muted); }
+  .next-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .next-step {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: var(--small);
+    color: var(--ink-secondary);
+  }
+  .next-step .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--accent-pale);
+    color: var(--accent-dark);
+    font-family: var(--font-en);
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .next-step .step-due {
+    font-family: var(--font-en);
+    font-size: var(--tiny);
+    color: var(--ink-muted);
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>22 / 31 · 输出样例</div>
+  </div>
+
+  <div class="main">
+    <div class="top-area">
+      <div class="kicker">Output Example</div>
+      <h2>一份可落地的<span class="accent">机会清单</span></h2>
+      <p class="subtitle">不是泛泛而谈的「建议」，而是带优先级、风险假设和下一步验证动作的交付物</p>
+    </div>
+
+    <div class="output-grid">
+      <div class="output-card">
+        <div class="card-header">
+          <div class="card-title">机会清单与优先级</div>
+          <div class="badge high">TOP 3</div>
+        </div>
+        <ul class="opportunity-list">
+          <li>
+            <span class="rank top">1</span>
+            <div>
+              <div>AI 场景识别自动优化拍摄参数</div>
+              <div class="detail">评分 4.5 · 需求强 · 技术成熟 · 竞品尚未规模化</div>
+            </div>
+          </li>
+          <li>
+            <span class="rank top">2</span>
+            <div>
+              <div>跨生态设备无缝协作（手机-平板-PC）</div>
+              <div class="detail">评分 4.2 · 生态壁垒高 · 用户粘性大</div>
+            </div>
+          </li>
+          <li>
+            <span class="rank">3</span>
+            <div>
+              <div>健康数据本地 AI 分析与预警</div>
+              <div class="detail">评分 3.8 · 隐私合规友好 · 差异化明显</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="output-card">
+        <div class="card-header">
+          <div class="card-title">风险假设</div>
+          <div class="badge medium">4 项</div>
+        </div>
+        <table class="risk-table">
+          <tr>
+            <th>假设</th>
+            <th>风险等级</th>
+            <th>验证方式</th>
+          </tr>
+          <tr>
+            <td>用户愿意为 AI 功能付溢价</td>
+            <td class="risk-high">高</td>
+            <td>定价测试 + 问卷</td>
+          </tr>
+          <tr>
+            <td>端侧算力足够支撑实时推理</td>
+            <td class="risk-medium">中</td>
+            <td>工程 PoC</td>
+          </tr>
+          <tr>
+            <td>竞品 6 个月内不会跟进</td>
+            <td class="risk-medium">中</td>
+            <td>竞品监控周报</td>
+          </tr>
+          <tr>
+            <td>供应链可支撑新传感器量产</td>
+            <td class="risk-low">低</td>
+            <td>供应商询价</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="output-card">
+        <div class="card-header">
+          <div class="card-title">下一步验证</div>
+          <div class="badge low">3 周内</div>
+        </div>
+        <div class="next-steps">
+          <div class="next-step">
+            <span class="step-num">1</span>
+            <span>用户深访：验证 AI 拍摄场景识别付费意愿（N=20）</span>
+            <span class="step-due">Week 1</span>
+          </div>
+          <div class="next-step">
+            <span class="step-num">2</span>
+            <span>技术 PoC：在现有平台跑通端侧模型推理延迟测试</span>
+            <span class="step-due">Week 2</span>
+          </div>
+          <div class="next-step">
+            <span class="step-num">3</span>
+            <span>竞品对标：拆解 TOP3 竞品最新固件中的 AI 功能</span>
+            <span class="step-due">Week 2</span>
+          </div>
+          <div class="next-step">
+            <span class="step-num">4</span>
+            <span>供应链摸底：向 3 家核心供应商获取传感器规格与报价</span>
+            <span class="step-due">Week 3</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="output-card" style="background: var(--dark-block); border-color: transparent; color: #fff;">
+        <div class="card-header" style="border-bottom-color: rgba(255,255,255,0.15);">
+          <div class="card-title" style="color: #fff;">交付物格式</div>
+          <div class="badge" style="background: var(--accent); color: #fff;">标准化</div>
+        </div>
+        <ul class="opportunity-list">
+          <li style="color: rgba(255,255,255,0.85);">
+            <span class="rank" style="background: rgba(255,255,255,0.15); color: #fff;">1</span>
+            <div>Markdown 报告：含数据截图、评分表、结论摘要</div>
+          </li>
+          <li style="color: rgba(255,255,255,0.85);">
+            <span class="rank" style="background: rgba(255,255,255,0.15); color: #fff;">2</span>
+            <div>Notion 数据库：可筛选的机会卡片，带标签与状态</div>
+          </li>
+          <li style="color: rgba(255,255,255,0.85);">
+            <span class="rank" style="background: rgba(255,255,255,0.15); color: #fff;">3</span>
+            <div>日历提醒：验证任务截止日期自动同步</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">实战案例 · 市场机会洞察</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>09 · 定时任务</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .header {
+    margin-bottom: 40px;
+  }
+  .header h2 {
+    font-size: 72px;
+    margin-bottom: 16px;
+  }
+  .header .subtitle {
+    font-size: 28px;
+    color: var(--ink-secondary);
+    max-width: 960px;
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .feature-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 36px;
+    box-shadow: 0 4px 20px rgba(28,27,24,0.05);
+  }
+  .feature-card h4 {
+    font-family: var(--font-body);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+  .feature-card p {
+    font-size: 22px;
+    line-height: 1.6;
+    color: var(--ink-secondary);
+    margin-bottom: 20px;
+  }
+  .feature-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .feature-card ul li {
+    position: relative;
+    padding-left: 28px;
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--ink-secondary);
+  }
+  .feature-card ul li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .highlight-card {
+    background: var(--accent-pale);
+    border: 1px solid var(--accent-light);
+    border-radius: 12px;
+    padding: 36px;
+  }
+  .highlight-card h4 {
+    font-family: var(--font-body);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--accent-dark);
+  }
+  .highlight-card .example {
+    font-family: var(--font-en);
+    font-size: 22px;
+    line-height: 1.6;
+    color: var(--ink-secondary);
+    background: rgba(255,255,255,0.6);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+  .highlight-card p {
+    font-size: 22px;
+    line-height: 1.6;
+    color: var(--ink-secondary);
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>09 / 31 · 定时任务</div>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <div class="kicker">Scheduled Tasks</div>
+      <h2>定时<span class="accent">任务</span></h2>
+      <p class="subtitle">用自然语言设置周期性工作，让 AI 在后台 unattended 运行，释放注意力。</p>
+    </div>
+
+    <div class="content-grid">
+      <div class="feature-card">
+        <h4>自然语言调度</h4>
+        <p>无需学习 Cron 表达式，直接用中文描述执行周期与内容。</p>
+        <ul>
+          <li>"每周一上午 9 点生成上周项目周报"</li>
+          <li>"每天下班前汇总今日代码提交记录"</li>
+          <li>"每月 1 号检查竞品价格变动并通知我"</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h4>周期性报告与监控</h4>
+        <p>让 AI 持续跟踪关键指标，在异常时主动告警。</p>
+        <ul>
+          <li>供应链物料价格监控与预警</li>
+          <li>用户反馈情感分析日报</li>
+          <li>项目里程碑进度自动追踪</li>
+          <li>竞品功能更新自动汇总</li>
+        </ul>
+      </div>
+      <div class="highlight-card">
+        <h4>Unattended 运行</h4>
+        <div class="example">"每天早上 8 点读取 Jira 看板，生成昨日完成项与阻塞项摘要，发送到企业微信。"</div>
+        <p>任务在 Hermes 桌面端后台执行，无需保持对话窗口开启。执行结果可通过多渠道推送（邮件、IM、Webhook），确保关键信息不遗漏。</p>
+      </div>
+      <div class="feature-card">
+        <h4>任务管理</h4>
+        <p>所有定时任务集中管理，支持启用、暂停、编辑与日志查看。</p>
+        <ul>
+          <li>可视化任务列表与执行历史</li>
+          <li>失败自动重试与告警通知</li>
+          <li>执行日志完整保留，便于审计</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">定时任务 · 从被动到主动</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

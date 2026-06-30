@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>04 · AI 的旧用法：聊天框</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content { display: flex; flex-direction: column; }
+  .main { flex: 1; display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center; }
+  .left h2 { font-size: 80px; margin-bottom: 28px; }
+  .left .body-large { max-width: 640px; margin-bottom: 36px; }
+  .left .callout { font-size: var(--h4); color: var(--ink); max-width: 600px; }
+  .chat {
+    background: #fff; border: 1px solid var(--line); border-radius: 18px;
+    padding: 36px; box-shadow: 0 8px 36px rgba(28,27,24,0.08);
+    display: flex; flex-direction: column; gap: 24px;
+  }
+  .bubble {
+    max-width: 85%; padding: 22px 26px; border-radius: 16px; font-size: var(--small); line-height: 1.55;
+  }
+  .bubble.user { align-self: flex-end; background: var(--dark-block); color: #fff; border-bottom-right-radius: 4px; }
+  .bubble.ai { align-self: flex-start; background: var(--paper-warm); color: var(--ink); border-bottom-left-radius: 4px; }
+  .hint { text-align: center; font-size: var(--tiny); color: var(--ink-muted); margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>04 / 31 · 旧用法</div>
+  </div>
+  <div class="main">
+    <div class="left">
+      <div class="kicker">Old Paradigm</div>
+      <h2>大多数人的 AI 用法：<br><span class="accent">打开聊天框，问一个问题</span></h2>
+      <p class="body-large">把 AI 当成高级搜索引擎或临时顾问，每次从零开始，答案用完即走。</p>
+      <p class="callout"><span class="accent-text">这种模式的问题是：</span>AI 不参与你的工作流，也不积累对你的理解。</p>
+    </div>
+    <div class="right">
+      <div class="chat">
+        <div class="bubble user">帮我写一份智能手表的 PRD。</div>
+        <div class="bubble ai">好的，以下是智能手表 PRD 的通用模板……</div>
+        <div class="bubble user">这个格式不太对，按我们公司的模板来。</div>
+        <div class="bubble ai">好的，请问你们公司的模板是什么样的？</div>
+      </div>
+      <p class="hint">每次都要重新交代背景，答案难以复用。</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="section-tag">旧范式</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>29 · 行动建议</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .header {
+    margin-bottom: 64px;
+  }
+  .header h2 {
+    font-size: 76px;
+    margin-bottom: 20px;
+  }
+  .header .subtitle {
+    font-size: 28px;
+    color: var(--ink-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .actions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1400px;
+    width: 100%;
+  }
+  .action-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 48px 36px;
+    box-shadow: 0 8px 32px rgba(28,27,24,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .action-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(28,27,24,0.12);
+  }
+  .action-number {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-en);
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 28px;
+  }
+  .action-card h4 {
+    font-family: var(--font-body);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+  .action-card p {
+    font-size: var(--small);
+    line-height: 1.6;
+    color: var(--ink-secondary);
+  }
+  .action-meta {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: var(--tiny);
+    color: var(--ink-muted);
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>29 / 31 · 行动建议</div>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <div class="kicker">Action Items</div>
+      <h2>本周就可以<span class="accent">开始</span>的 3 件事</h2>
+      <p class="subtitle">不需要等待完美方案，从最小的一步开始，让 AI 进入你的工作流。</p>
+    </div>
+
+    <div class="actions-grid">
+      <div class="action-card">
+        <div class="action-number">1</div>
+        <h4>安装 Hermes 桌面端</h4>
+        <p>下载并配置桌面客户端，开启本地文件访问和浏览器自动化能力，这是所有后续操作的基础。</p>
+        <div class="action-meta">预计 15 分钟</div>
+      </div>
+      <div class="action-card">
+        <div class="action-number">2</div>
+        <h4>选一个重复任务自动化</h4>
+        <p>找出你每周至少做两次的重复性工作，用 Hermes 的定时任务或 Skill 把它自动化。</p>
+        <div class="action-meta">例如：日报、周报、数据监控</div>
+      </div>
+      <div class="action-card">
+        <div class="action-number">3</div>
+        <h4>尝试一个 Skill</h4>
+        <p>从官方 Skill 市场选一个与你工作相关的 Skill，运行一次并根据自己的需求修改 Prompt。</p>
+        <div class="action-meta">推荐：文档摘要、竞品分析</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">行动建议 · 本周开始</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

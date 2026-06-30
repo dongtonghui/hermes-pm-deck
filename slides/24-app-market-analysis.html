@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>24 · AI + 市场分析</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .left {
+    max-width: 720px;
+  }
+  .left h2 {
+    font-size: 64px;
+    margin-bottom: 20px;
+  }
+  .value-prop {
+    font-size: 28px;
+    color: var(--ink-secondary);
+    line-height: 1.5;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+  }
+  .scenario-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .scenario-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .scenario-num {
+    font-family: var(--font-en);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    min-width: 44px;
+  }
+  .scenario-text h4 {
+    font-family: var(--font-body);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .scenario-text p {
+    font-size: var(--small);
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    justify-content: center;
+  }
+  .flow-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 28px 32px;
+    box-shadow: 0 4px 20px rgba(28,27,24,0.05);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .flow-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: var(--accent-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-en);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent-dark);
+    flex-shrink: 0;
+  }
+  .flow-content {
+    flex: 1;
+  }
+  .flow-content h4 {
+    font-family: var(--font-body);
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+  .flow-content p {
+    font-size: var(--tiny);
+    color: var(--ink-muted);
+  }
+  .flow-arrow {
+    text-align: center;
+    color: var(--accent);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    margin: 4px 0;
+  }
+  .before-after {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .ba-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 24px;
+  }
+  .ba-card .ba-label {
+    font-family: var(--font-en);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .ba-card.before .ba-label { color: var(--ink-muted); }
+  .ba-card.after .ba-label { color: var(--accent); }
+  .ba-card .ba-desc {
+    font-size: var(--tiny);
+    color: var(--ink-secondary);
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>24 / 31 · 应用场景</div>
+  </div>
+
+  <div class="main">
+    <div class="left">
+      <div class="kicker">Market Intelligence</div>
+      <h2>AI + <span class="accent">市场分析</span></h2>
+      <p class="value-prop">从人工爬取到智能聚合，让市场洞察从「周级」压缩到「小时级」。</p>
+
+      <div class="scenario-list">
+        <div class="scenario-item">
+          <div class="scenario-num">01</div>
+          <div class="scenario-text">
+            <h4>信息聚合与趋势识别</h4>
+            <p>自动抓取行业报告、专利、供应链动态，生成结构化趋势图谱与预警。</p>
+          </div>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-num">02</div>
+          <div class="scenario-text">
+            <h4>竞品对比矩阵</h4>
+            <p>输入竞品清单，AI 自动生成参数对比表、价格带分布与差异化定位建议。</p>
+          </div>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-num">03</div>
+          <div class="scenario-text">
+            <h4>机会 Sizing 与优先级</h4>
+            <p>基于市场容量、增长率、竞争强度，量化评估细分赛道吸引力并排序。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="flow-card">
+        <div class="flow-icon">1</div>
+        <div class="flow-content">
+          <h4>多源信息输入</h4>
+          <p>行业报告、新闻、专利、财报、供应链数据</p>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-card">
+        <div class="flow-icon">2</div>
+        <div class="flow-content">
+          <h4>AI 聚合与结构化</h4>
+          <p>自动分类、去重、提取关键指标、生成时间线</p>
+        </div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-card">
+        <div class="flow-icon">3</div>
+        <div class="flow-content">
+          <h4>洞察输出与决策支持</h4>
+          <p>趋势图谱、竞品矩阵、机会评分、执行建议</p>
+        </div>
+      </div>
+
+      <div class="before-after">
+        <div class="ba-card before">
+          <div class="ba-label">Before</div>
+          <div class="ba-desc">人工搜索 2-3 天，Excel 整理，信息碎片化，容易遗漏关键信号。</div>
+        </div>
+        <div class="ba-card after">
+          <div class="ba-label">After</div>
+          <div class="ba-desc">AI 聚合 2-3 小时，结构化输出，自动关联历史数据，实时预警。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">应用场景 · 市场分析</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

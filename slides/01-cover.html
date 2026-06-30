@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>01 · 封面</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body {
+    background: var(--dark-block);
+    color: #fff;
+  }
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 64px;
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: var(--tiny);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+  }
+  .brand-mark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .brand-mark::before {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 28px;
+    background: var(--accent);
+    border-radius: 6px;
+  }
+  .hero {
+    max-width: 1320px;
+  }
+  .kicker-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-en);
+    font-size: var(--small);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 32px;
+  }
+  .kicker-light::before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+  }
+  h1 {
+    font-size: 128px;
+    color: #fff;
+    margin-bottom: 40px;
+    line-height: 1.08;
+  }
+  h1 .line2 {
+    color: rgba(255,255,255,0.55);
+  }
+  .subtitle {
+    font-size: 40px;
+    color: rgba(255,255,255,0.78);
+    font-style: normal;
+    max-width: 960px;
+    line-height: 1.45;
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 32px;
+  }
+  .meta {
+    display: flex;
+    gap: 48px;
+    font-size: var(--small);
+    color: rgba(255,255,255,0.6);
+  }
+  .meta strong {
+    display: block;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: var(--body);
+  }
+  .accent-pillar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 18px;
+    background: var(--accent);
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="accent-pillar"></div>
+
+  <div class="top">
+    <div class="brand-mark">Hermes 内部分享</div>
+    <div>Internal Sharing · 2026</div>
+  </div>
+
+  <div class="hero">
+    <div class="kicker-light">AI 工具深度应用</div>
+    <h1>
+      从聊天到<span class="accent">工作伙伴</span>
+      <br>
+      <span class="line2">AI 在硬件产品工作中的应用</span>
+    </h1>
+    <p class="subtitle">探索 Skills、定时任务与实战案例，让 Hermes 桌面端成为硬件 PM 的日常工作入口。</p>
+  </div>
+
+  <div class="bottom">
+    <div class="meta">
+      <div>
+        <strong>面向对象</strong>
+        硬件侧产品经理
+      </div>
+      <div>
+        <strong>分享时长</strong>
+        约 45 分钟
+      </div>
+      <div>
+        <strong>核心工具</strong>
+        Hermes 桌面端
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

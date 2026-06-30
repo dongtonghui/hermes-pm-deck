@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>12 · Hermes vs Codex vs Claude</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .top-area {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .top-area h2 {
+    font-size: 68px;
+    margin-bottom: 12px;
+  }
+  .top-area h2 .accent {
+    color: var(--accent);
+  }
+  .top-area .subtitle {
+    font-size: 28px;
+    color: var(--ink-secondary);
+    font-style: normal;
+  }
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+  }
+  .comparison-table th,
+  .comparison-table td {
+    padding: 20px 24px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+    font-size: var(--small);
+  }
+  .comparison-table th {
+    font-family: var(--font-display);
+    font-size: var(--body);
+    font-weight: 700;
+    color: var(--ink);
+    background: var(--paper-warm);
+    border-bottom: 2px solid var(--line-strong);
+  }
+  .comparison-table th:first-child {
+    width: 22%;
+  }
+  .comparison-table td:first-child {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .comparison-table td {
+    color: var(--ink-secondary);
+    line-height: 1.5;
+  }
+  .comparison-table tr:hover td {
+    background: var(--highlight);
+  }
+  .highlight-cell {
+    background: var(--accent-pale);
+    font-weight: 600;
+    color: var(--accent-dark);
+  }
+  .check {
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .cross {
+    color: var(--ink-muted);
+  }
+  .partial {
+    color: var(--ink-secondary);
+  }
+  .conclusion {
+    background: var(--dark-block);
+    color: #fff;
+    border-radius: 14px;
+    padding: 36px 48px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  .conclusion-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .conclusion-text h4 {
+    font-family: var(--font-body);
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .conclusion-text p {
+    font-size: var(--small);
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>12 / 31 · 横向对比</div>
+  </div>
+
+  <div class="main">
+    <div class="top-area">
+      <div class="kicker">Comparison</div>
+      <h2>Hermes <span class="accent">vs</span> Codex <span class="accent">vs</span> Claude</h2>
+      <p class="subtitle">三款主流 AI 工具的核心差异与适用场景</p>
+    </div>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>对比维度</th>
+          <th>Hermes</th>
+          <th>Codex</th>
+          <th>Claude</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>成本</td>
+          <td class="highlight-cell">完全免费，MIT 开源</td>
+          <td>订阅制 / API 按量计费</td>
+          <td>订阅制 / API 按量计费</td>
+        </tr>
+        <tr>
+          <td>Skills 兼容</td>
+          <td class="highlight-cell">全兼容，社区生态丰富</td>
+          <td>IDE 插件生态为主</td>
+          <td>有限，需通过 API 接入</td>
+        </tr>
+        <tr>
+          <td>消息渠道</td>
+          <td class="highlight-cell">WebUI、钉钉、飞书、WhatsApp 等</td>
+          <td>IDE 内嵌、命令行</td>
+          <td>Web、Slack、API</td>
+        </tr>
+        <tr>
+          <td>记忆能力</td>
+          <td class="highlight-cell">跨会话持久记忆，自迭代</td>
+          <td>项目级上下文</td>
+          <td>单会话长上下文</td>
+        </tr>
+        <tr>
+          <td>模型选择</td>
+          <td class="highlight-cell">自由切换，本地模型支持</td>
+          <td>OpenAI 专用</td>
+          <td>Anthropic 专用</td>
+        </tr>
+        <tr>
+          <td>开源程度</td>
+          <td class="highlight-cell">完全开源，可私有化部署</td>
+          <td>闭源</td>
+          <td>闭源</td>
+        </tr>
+        <tr>
+          <td>适用场景</td>
+          <td>日常办公、跨平台协作、定制化工作流</td>
+          <td>IDE 深度集成、代码生成</td>
+          <td>长文本分析、创意写作、研究</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="conclusion">
+      <div class="conclusion-icon">结论</div>
+      <div class="conclusion-text">
+        <h4>Hermes 适合希望免费、跨平台、可定制、记忆持续进化的日常使用者</h4>
+        <p>Codex 与 Claude 在 IDE 深度集成和 polished 代码生成上更强，但 Hermes 以开源、免费、跨平台、可定制的优势，成为日常办公与团队协作的更灵活选择。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">工具介绍 · 横向对比</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>21 · 分析框架</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .left h2 {
+    font-size: 64px;
+    margin-bottom: 24px;
+  }
+  .left .body-large {
+    max-width: 540px;
+    margin-bottom: 40px;
+  }
+  .framework-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .framework-list li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: var(--body);
+    color: var(--ink-secondary);
+  }
+  .framework-list .factor {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--accent-pale);
+    color: var(--accent-dark);
+    font-family: var(--font-en);
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .framework-list .weight {
+    font-family: var(--font-en);
+    font-size: var(--small);
+    color: var(--accent);
+    font-weight: 600;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .matrix-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .quadrant {
+    background: #fff;
+    border: 2px solid var(--line);
+    border-radius: 14px;
+    padding: 32px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+  }
+  .quadrant .q-label {
+    font-family: var(--font-en);
+    font-size: var(--tiny);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 12px;
+  }
+  .quadrant .q-title {
+    font-family: var(--font-display);
+    font-size: var(--h4);
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+  .quadrant .q-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .quadrant .q-items li {
+    font-size: var(--small);
+    color: var(--ink-secondary);
+    padding-left: 16px;
+    position: relative;
+  }
+  .quadrant .q-items li::before {
+    content: "·";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .quadrant.highlight {
+    border-color: var(--accent);
+    background: var(--accent-pale);
+  }
+  .quadrant.highlight .q-label {
+    color: var(--accent-dark);
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>21 / 31 · 分析框架</div>
+  </div>
+
+  <div class="main">
+    <div class="left">
+      <div class="kicker">Framework</div>
+      <h2>四维评分<span class="accent">矩阵</span></h2>
+      <p class="body-large">不是「我觉得有机会」，而是「四个维度加权后得分最高」。每个因子 1-5 分，总分决定优先级。</p>
+      <ul class="framework-list">
+        <li>
+          <span class="factor">1</span>
+          <span>需求强度</span>
+          <span class="weight">权重 30%</span>
+        </li>
+        <li>
+          <span class="factor">2</span>
+          <span>供给缺口</span>
+          <span class="weight">权重 25%</span>
+        </li>
+        <li>
+          <span class="factor">3</span>
+          <span>技术可行性</span>
+          <span class="weight">权重 25%</span>
+        </li>
+        <li>
+          <span class="factor">4</span>
+          <span>公司能力匹配</span>
+          <span class="weight">权重 20%</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="right">
+      <div class="matrix-row">
+        <div class="quadrant highlight">
+          <div class="q-label">High Priority</div>
+          <div class="q-title">立即投入</div>
+          <ul class="q-items">
+            <li>需求强 + 竞品弱 + 技术成熟</li>
+            <li>例：AI 辅助拍摄场景识别</li>
+          </ul>
+        </div>
+        <div class="quadrant">
+          <div class="q-label">Watch List</div>
+          <div class="q-title">持续观察</div>
+          <ul class="q-items">
+            <li>需求强但技术尚不成熟</li>
+            <li>例：端侧大模型实时推理</li>
+          </ul>
+        </div>
+      </div>
+      <div class="matrix-row">
+        <div class="quadrant">
+          <div class="q-label">Quick Win</div>
+          <div class="q-title">快速验证</div>
+          <ul class="q-items">
+            <li>技术成熟但需求待验证</li>
+            <li>例：跨设备剪贴板同步</li>
+          </ul>
+        </div>
+        <div class="quadrant">
+          <div class="q-label">Deprioritize</div>
+          <div class="q-title">暂缓或放弃</div>
+          <ul class="q-items">
+            <li>需求弱 + 竞品强 + 技术难</li>
+            <li>例：独立 VR 头戴设备</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">实战案例 · 市场机会洞察</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

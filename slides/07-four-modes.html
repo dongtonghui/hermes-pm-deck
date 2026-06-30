@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>07 · 四大工作模式</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .header h2 {
+    font-size: 72px;
+    margin-bottom: 16px;
+  }
+  .header .subtitle {
+    font-size: 28px;
+    color: var(--ink-secondary);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .modes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .mode-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(28,27,24,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .mode-card .icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    background: var(--accent-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--accent-dark);
+    margin-bottom: 8px;
+  }
+  .mode-card h4 {
+    font-family: var(--font-body);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .mode-card p {
+    font-size: 22px;
+    line-height: 1.6;
+    color: var(--ink-secondary);
+  }
+  .mode-card .tag {
+    font-family: var(--font-en);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>07 / 31 · 工作模式</div>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <div class="kicker">Working Modes</div>
+      <h2>四大<span class="accent">工作模式</span></h2>
+      <p class="subtitle">Hermes 桌面端将 AI 能力封装为四种可组合的工作模式，覆盖从即时执行到长期自动化的完整场景。</p>
+    </div>
+
+    <div class="modes-grid">
+      <div class="mode-card">
+        <div class="icon">S</div>
+        <div class="tag">Skills</div>
+        <h4>技能增强</h4>
+        <p>将经验封装为可复用的能力模块，每次调用都按最佳实践执行。支持版本管理与团队共享。</p>
+      </div>
+      <div class="mode-card">
+        <div class="icon">T</div>
+        <div class="tag">Scheduled</div>
+        <h4>定时任务</h4>
+        <p>用自然语言设置周期性工作，让报告生成、竞品监控、数据备份 unattended 运行。</p>
+      </div>
+      <div class="mode-card">
+        <div class="icon">D</div>
+        <div class="tag">Delegated</div>
+        <h4>委派子代理</h4>
+        <p>为复杂任务创建隔离子代理，各自保留上下文，降低干扰与成本，实现并行处理。</p>
+      </div>
+      <div class="mode-card">
+        <div class="icon">R</div>
+        <div class="tag">Research</div>
+        <h4>主动搜索</h4>
+        <p>网络搜索、浏览器自动化、图片生成、多模态推理一站完成，信息获取零延迟。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">工作模式 · 从对话到自动化</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

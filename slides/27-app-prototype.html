@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>27 · AI + 制作原型</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .left {
+    max-width: 720px;
+  }
+  .left h2 {
+    font-size: 64px;
+    margin-bottom: 20px;
+  }
+  .value-prop {
+    font-size: 28px;
+    color: var(--ink-secondary);
+    line-height: 1.5;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+  }
+  .scenario-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .scenario-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .scenario-num {
+    font-family: var(--font-en);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    min-width: 44px;
+  }
+  .scenario-text h4 {
+    font-family: var(--font-body);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .scenario-text p {
+    font-size: var(--small);
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    justify-content: center;
+  }
+  .proto-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 28px 32px;
+    box-shadow: 0 4px 20px rgba(28,27,24,0.05);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .proto-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    background: var(--accent-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-en);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-dark);
+    flex-shrink: 0;
+  }
+  .proto-content h4 {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .proto-content p {
+    font-size: var(--tiny);
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+  .iteration-loop {
+    background: var(--dark-block);
+    border-radius: 12px;
+    padding: 28px 32px;
+    color: #fff;
+    margin-top: 8px;
+  }
+  .iteration-loop h4 {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .loop-steps {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .loop-step {
+    flex: 1;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 16px 14px;
+    text-align: center;
+  }
+  .loop-step .ls-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 8px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .loop-step .ls-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .loop-arrow {
+    color: var(--accent);
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .loop-metrics {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .loop-metric {
+    flex: 1;
+    text-align: center;
+  }
+  .loop-metric .lm-value {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--accent-light);
+  }
+  .loop-metric .lm-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>27 / 31 · 应用场景</div>
+  </div>
+
+  <div class="main">
+    <div class="left">
+      <div class="kicker">Prototyping</div>
+      <h2>AI + <span class="accent">制作原型</span></h2>
+      <p class="value-prop">从需求到可交互 demo，让原型制作从「周级」压缩到「天级」，加速验证与迭代。</p>
+
+      <div class="scenario-list">
+        <div class="scenario-item">
+          <div class="scenario-num">01</div>
+          <div class="scenario-text">
+            <h4>高保真页面原型</h4>
+            <p>用文字描述或手绘草图，AI 生成高保真 HTML/CSS 页面，支持响应式与组件化。</p>
+          </div>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-num">02</div>
+          <div class="scenario-text">
+            <h4>交互 Demo 与动效</h4>
+            <p>自动生成页面跳转、状态变化、微交互动效，输出可点击的交互演示链接。</p>
+          </div>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-num">03</div>
+          <div class="scenario-text">
+            <h4>快速验证与迭代反馈</h4>
+            <p>基于用户测试反馈，AI 自动修改原型并生成对比版本，缩短迭代周期。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="proto-card">
+        <div class="proto-icon">A</div>
+        <div class="proto-content">
+          <h4>输入需求描述</h4>
+          <p>「一个跨设备剪贴板管理面板，左侧设备列表，右侧历史记录，支持搜索与筛选」</p>
+        </div>
+      </div>
+      <div class="proto-card">
+        <div class="proto-icon">B</div>
+        <div class="proto-content">
+          <h4>AI 生成高保真原型</h4>
+          <p>输出 HTML/CSS 页面，包含布局、配色、组件、响应式断点，可直接在浏览器预览。</p>
+        </div>
+      </div>
+      <div class="proto-card">
+        <div class="proto-icon">C</div>
+        <div class="proto-content">
+          <h4>添加交互与动效</h4>
+          <p>点击设备切换、搜索实时过滤、剪贴项 hover 预览、复制成功 toast 反馈。</p>
+        </div>
+      </div>
+      <div class="proto-card">
+        <div class="proto-icon">D</div>
+        <div class="proto-content">
+          <h4>用户测试与迭代</h4>
+          <p>收集反馈后，AI 生成 V2 对比版本，标注改动点，支持 A/B 评审。</p>
+        </div>
+      </div>
+
+      <div class="iteration-loop">
+        <h4>快速迭代循环</h4>
+        <div class="loop-steps">
+          <div class="loop-step">
+            <div class="ls-label">需求</div>
+            <div class="ls-value">描述</div>
+          </div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-step">
+            <div class="ls-label">生成</div>
+            <div class="ls-value">原型</div>
+          </div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-step">
+            <div class="ls-label">测试</div>
+            <div class="ls-value">验证</div>
+          </div>
+          <div class="loop-arrow">→</div>
+          <div class="loop-step">
+            <div class="ls-label">反馈</div>
+            <div class="ls-value">迭代</div>
+          </div>
+        </div>
+        <div class="loop-metrics">
+          <div class="loop-metric">
+            <div class="lm-value">2 天</div>
+            <div class="lm-label">首版原型</div>
+          </div>
+          <div class="loop-metric">
+            <div class="lm-value">4 小时</div>
+            <div class="lm-label">单次迭代</div>
+          </div>
+          <div class="loop-metric">
+            <div class="lm-value">3 轮</div>
+            <div class="lm-label">典型验证</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">应用场景 · 原型制作</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

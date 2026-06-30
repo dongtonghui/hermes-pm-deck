@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>31 · 结尾 / Q&A</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body {
+    background: var(--dark-block);
+    color: #fff;
+  }
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 64px;
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: var(--tiny);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+  }
+  .brand-mark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .brand-mark::before {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 28px;
+    background: var(--accent);
+    border-radius: 6px;
+  }
+  .hero {
+    max-width: 1320px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .kicker-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-en);
+    font-size: var(--small);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 32px;
+  }
+  .kicker-light::before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+  }
+  h1 {
+    font-size: 120px;
+    color: #fff;
+    margin-bottom: 40px;
+    line-height: 1.08;
+  }
+  h1 .accent {
+    color: var(--accent-light);
+  }
+  .subtitle {
+    font-size: 40px;
+    color: rgba(255,255,255,0.78);
+    font-style: normal;
+    max-width: 960px;
+    line-height: 1.45;
+    margin: 0 auto 64px;
+  }
+  .contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    font-size: var(--small);
+    color: rgba(255,255,255,0.6);
+  }
+  .contact-info strong {
+    display: block;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: var(--body);
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 32px;
+  }
+  .meta {
+    display: flex;
+    gap: 48px;
+    font-size: var(--small);
+    color: rgba(255,255,255,0.6);
+  }
+  .meta strong {
+    display: block;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: var(--body);
+  }
+  .accent-pillar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 18px;
+    background: var(--accent);
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="accent-pillar"></div>
+
+  <div class="top">
+    <div class="brand-mark">Hermes 内部分享</div>
+    <div>31 / 31 · 结尾</div>
+  </div>
+
+  <div class="hero">
+    <div class="kicker-light">Q & A</div>
+    <h1>
+      从聊天到<span class="accent">工作伙伴</span>
+    </h1>
+    <p class="subtitle">让 AI 成为你的日常生产力工具，而不是偶尔的玩具。<br>今天开始，把 Hermes 桌面端放进你的工作流。</p>
+    <div class="contact-info">
+      <div>
+        <strong>分享者</strong>
+        Kris · 软件产品经理
+      </div>
+      <div>
+        <strong>联系方式</strong>
+        企业微信 / 飞书
+      </div>
+      <div>
+        <strong>下一步</strong>
+        安装桌面端，尝试第一个 Skill
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="meta">
+      <div>
+        <strong>分享时间</strong>
+        2026 年 7 月
+      </div>
+      <div>
+        <strong>核心工具</strong>
+        Hermes 桌面端
+      </div>
+      <div>
+        <strong>持续更新</strong>
+        飞书知识库
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

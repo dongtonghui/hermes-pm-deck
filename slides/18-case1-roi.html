@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>18 · 关键洞察</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content { display: flex; flex-direction: column; }
+  .main { flex: 1; display: grid; grid-template-columns: 1fr 120px 1fr; gap: 0; align-items: start; padding-top: 40px; }
+
+  .col { display: flex; flex-direction: column; gap: 24px; }
+  .col-header {
+    font-family: var(--font-display); font-size: 36px; font-weight: 700;
+    padding-bottom: 16px; border-bottom: 3px solid;
+    margin-bottom: 8px;
+  }
+  .bad .col-header { color: #8B7355; border-color: #8B7355; }
+  .good .col-header { color: var(--accent); border-color: var(--accent); }
+
+  .trap-card, .insight-card {
+    border-radius: 14px; padding: 28px;
+    box-shadow: 0 6px 24px rgba(28,27,24,0.06);
+  }
+  .trap-card { background: #fff; border: 1px solid var(--line); }
+  .insight-card { background: var(--accent-pale); border: 1px solid var(--accent-light); }
+  .trap-card h4, .insight-card h4 { font-family: var(--font-body); font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+  .trap-card h4 { color: var(--ink); }
+  .insight-card h4 { color: var(--accent-dark); }
+  .trap-card p, .insight-card p { font-size: var(--tiny); line-height: 1.6; color: var(--ink-secondary); }
+
+  .arrow-col {
+    display: flex; align-items: center; justify-content: center;
+    height: 100%;
+  }
+  .arrow-col .arrow {
+    width: 80px; height: 80px; border-radius: 50%; background: var(--dark-block);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 36px; font-weight: 700;
+    box-shadow: 0 8px 24px rgba(28,27,24,0.18);
+  }
+
+  .quotes-row {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 8px;
+  }
+  .mini-quote {
+    background: #fff; border: 1px solid var(--line); border-radius: 14px;
+    padding: 24px; box-shadow: 0 4px 16px rgba(28,27,24,0.05);
+  }
+  .mini-quote .text {
+    font-family: var(--font-en); font-size: 17px; line-height: 1.5; color: var(--ink);
+    margin-bottom: 12px; font-style: italic;
+  }
+  .mini-quote .tag {
+    font-size: 13px; color: var(--accent-dark); font-weight: 600;
+  }
+
+  .bottom-insight {
+    grid-column: 1 / -1;
+    background: var(--dark-block); color: #fff; border-radius: 14px;
+    padding: 24px 36px; margin-top: 8px;
+    font-family: var(--font-display); font-size: var(--h4); font-weight: 600;
+    text-align: center;
+  }
+  .bottom-insight .accent { color: var(--accent-light); }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>18 / 31 · 关键洞察</div>
+  </div>
+
+  <div class="main">
+    <div class="col bad">
+      <div class="col-header">Gardyn 的订阅争议</div>
+      <div class="trap-card">
+        <h4>基础功能绑定订阅</h4>
+        <p>光照/浇水时间表、水位预警本应是硬件自带能力，却被包装成 Kelby 订阅功能，用户感到被双重收费。</p>
+      </div>
+      <div class="trap-card">
+        <h4>$400/年 与价值不匹配</h4>
+        <p>用户认为 "$900 硬件 + $400/年订阅" 的定价下，基础通知功能都不具备，订阅价值感崩塌。</p>
+      </div>
+      <div class="trap-card">
+        <h4>种子积分贬值</h4>
+        <p>原本 1 credit 的常规植物涨到 2-3 credits，月度 10 credits 购买力下降，用户对定价透明度产生质疑。</p>
+      </div>
+    </div>
+
+    <div class="arrow-col">
+      <div class="arrow">→</div>
+    </div>
+
+    <div class="col good">
+      <div class="col-header">从数据中学到什么</div>
+      <div class="insight-card">
+        <h4>订阅不应锁基础功能</h4>
+        <p>取消订阅的门槛不应是"失去基础功能"，而应是"失去增值服务"。基础能力应随硬件购买永久可用。</p>
+      </div>
+      <div class="insight-card">
+        <h4>定价要透明可预期</h4>
+        <p>credits 积分系统会隐藏真实价格并引发"贬值"焦虑。直接定价、不搞积分游戏，用户信任度更高。</p>
+      </div>
+      <div class="insight-card">
+        <h4>用户需求光谱很宽</h4>
+        <p>25% 强烈抵触、35% 犹豫观望、30% 接受使用、10% 高度依赖。单一订阅无法满足如此宽的需求分布。</p>
+      </div>
+    </div>
+
+    <div class="quotes-row">
+      <div class="mini-quote">
+        <div class="text">"Been paying for the membership but it seems that all it does is set my light and water schedule."</div>
+        <div class="tag">功能可替代 · 取消原因</div>
+      </div>
+      <div class="mini-quote">
+        <div class="text">"I could probably build this set up without the WiFi/connectivity for couple hundred dollars..."</div>
+        <div class="tag">DIY 替代 · 价格敏感</div>
+      </div>
+      <div class="mini-quote">
+        <div class="text">"I see people saying Kelby is useless, but I'm not experienced with plants..."</div>
+        <div class="tag">愿意为省心付费 · 但犹豫</div>
+      </div>
+    </div>
+
+    <div class="bottom-insight">
+      核心洞察：<span class="accent">订阅模式的价值感取决于"免费层是否足够诚实"</span>——而不是把本属硬件的能力包装成付费功能。
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">Case 1 · Reddit 抓取分析</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

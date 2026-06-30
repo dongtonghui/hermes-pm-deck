@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>16 · 工作流拆解</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content { display: flex; flex-direction: column; }
+  .main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-top: 20px; }
+  .main h2 { font-size: 64px; margin-bottom: 56px; text-align: center; }
+  .timeline { display: flex; gap: 32px; position: relative; }
+  .timeline::before {
+    content: ""; position: absolute; top: 40px; left: 60px; right: 60px; height: 4px;
+    background: var(--line); z-index: 0;
+  }
+  .step {
+    flex: 1; display: flex; flex-direction: column; align-items: center;
+    position: relative; z-index: 1;
+  }
+  .step-num {
+    width: 80px; height: 80px; border-radius: 50%; background: var(--accent); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-en); font-size: 32px; font-weight: 700;
+    margin-bottom: 28px; box-shadow: 0 8px 24px rgba(196,92,38,0.3);
+  }
+  .step-content {
+    background: #fff; border: 1px solid var(--line); border-radius: 12px;
+    padding: 28px; width: 100%; box-shadow: 0 4px 20px rgba(28,27,24,0.05);
+  }
+  .step-content h4 { font-family: var(--font-body); font-size: 24px; font-weight: 700; margin-bottom: 12px; color: var(--ink); text-align: center; }
+  .step-content ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .step-content li { font-size: var(--tiny); line-height: 1.5; color: var(--ink-secondary); padding-left: 16px; position: relative; }
+  .step-content li::before { content: "—"; position: absolute; left: 0; color: var(--accent); font-weight: 600; }
+  .data-point {
+    margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line);
+    font-size: var(--tiny); color: var(--accent-dark); font-weight: 600; text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>16 / 31 · 工作流拆解</div>
+  </div>
+
+  <div class="main">
+    <div class="kicker" style="text-align:center; justify-content:center;">Workflow</div>
+    <h2>从抓取到洞察的 <span class="accent">五步闭环</span></h2>
+
+    <div class="timeline">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>定义关键词</h4>
+          <ul>
+            <li>membership / subscription / Kelby</li>
+            <li>cancel / referral / discount</li>
+            <li>price / worth / credits</li>
+          </ul>
+          <div class="data-point">8 个核心主题词</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>API 抓取</h4>
+          <ul>
+            <li>pullpush.io / Reddit API</li>
+            <li>拉取帖子 + 评论全文</li>
+            <li>处理分页与速率限制</li>
+          </ul>
+          <div class="data-point">1,000 帖 + 1,000 评论</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>语义筛选</h4>
+          <ul>
+            <li>AI 判断与 membership 相关性</li>
+            <li>剔除广告、垃圾、重复内容</li>
+            <li>严格筛选核心帖 237 篇</li>
+          </ul>
+          <div class="data-point">473 帖 + 319 评论命中</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>AI 分析</h4>
+          <ul>
+            <li>主题分类与占比统计</li>
+            <li>态度光谱与情绪标注</li>
+            <li>价格锚点与竞品替代提取</li>
+          </ul>
+          <div class="data-point">8 个主题 · 4 段态度</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <h4>输出报告</h4>
+          <ul>
+            <li>结构化 Markdown 报告</li>
+            <li>推送飞书/邮件/钉钉</li>
+            <li>存档供历史趋势对比</li>
+          </ul>
+          <div class="data-point">每周定时自动执行</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">Case 1 · Reddit 抓取分析</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

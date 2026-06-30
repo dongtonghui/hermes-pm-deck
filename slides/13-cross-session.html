@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>14 · 跨会话能力对比</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content { display: flex; flex-direction: column; }
+  .main { flex: 1; display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; padding-top: 32px; }
+
+  /* ─── Left: chat reenactment ─── */
+  .chat-side { display: flex; flex-direction: column; }
+  .chat-side h2 { font-size: 52px; margin-bottom: 36px; line-height: 1.15; }
+  .chat-window {
+    background: #fff; border: 1px solid var(--line); border-radius: 18px;
+    box-shadow: 0 12px 48px rgba(28,27,24,0.1);
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .chat-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px 20px; background: #F5F5F7;
+    border-bottom: 1px solid var(--line);
+  }
+  .chat-header .avatar {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #D1A693; display: flex; align-items: center; justify-content: center;
+    font-size: 12px; color: #fff; font-weight: 700;
+  }
+  .chat-header .title { font-size: var(--small); font-weight: 600; color: var(--ink); }
+  .chat-body { padding: 24px; display: flex; flex-direction: column; gap: 20px; }
+  .message { display: flex; gap: 12px; max-width: 92%; }
+  .message.user { align-self: flex-end; flex-direction: row-reverse; }
+  .message .bubble {
+    padding: 16px 18px; border-radius: 16px; font-size: var(--tiny); line-height: 1.55;
+  }
+  .message.user .bubble { background: var(--dark-block); color: #fff; border-bottom-right-radius: 4px; }
+  .message.ai .bubble { background: var(--paper-warm); color: var(--ink); border-bottom-left-radius: 4px; }
+  .message .avatar {
+    width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; color: #fff;
+  }
+  .message.user .avatar { background: var(--accent); }
+  .message.ai .avatar { background: #C9B8A8; }
+  .chat-footer {
+    padding: 12px 20px; border-top: 1px solid var(--line);
+    font-size: 13px; color: var(--ink-muted);
+  }
+
+  /* ─── Right: Hermes advantage ─── */
+  .advantage-side { display: flex; flex-direction: column; gap: 28px; }
+  .advantage-header {
+    background: var(--accent-pale); border: 1px solid var(--accent-light); border-radius: 14px;
+    padding: 28px;
+  }
+  .advantage-header h3 { font-family: var(--font-body); font-size: 30px; font-weight: 700; color: var(--accent-dark); margin-bottom: 10px; }
+  .advantage-header p { font-size: var(--small); color: var(--ink-secondary); line-height: 1.55; }
+
+  .feature-list { display: flex; flex-direction: column; gap: 18px; }
+  .feature-item {
+    display: flex; gap: 18px; align-items: flex-start;
+    background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 22px;
+    box-shadow: 0 4px 16px rgba(28,27,24,0.05);
+  }
+  .feature-icon {
+    width: 44px; height: 44px; border-radius: 10px; background: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 20px; font-weight: 700; flex-shrink: 0;
+  }
+  .feature-item h4 { font-family: var(--font-body); font-size: 21px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+  .feature-item p { font-size: var(--tiny); color: var(--ink-secondary); line-height: 1.55; }
+
+  .bottom-callout {
+    background: var(--dark-block); color: #fff; border-radius: 14px;
+    padding: 22px 28px; font-family: var(--font-display); font-size: 24px; font-weight: 600;
+  }
+  .bottom-callout .accent { color: var(--accent-light); }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>13 / 31 · 跨会话能力对比</div>
+  </div>
+
+  <div class="main">
+    <div class="chat-side">
+      <div class="kicker">Real Scenario</div>
+      <h2>同样的请求，<br><span class="accent">不同的结果</span></h2>
+
+      <div class="chat-window">
+        <div class="chat-header">
+          <div class="avatar">C</div>
+          <div class="title">与 Claude 的对话</div>
+        </div>
+        <div class="chat-body">
+          <div class="message user">
+            <div class="avatar">你</div>
+            <div class="bubble">
+              我昨天或者前天，让你做了一个 PPT，而且还让你为这个 PPT 生成了对应的素材（PRD 和 demo），那个项目你还记得吗？
+            </div>
+          </div>
+
+          <div class="message ai">
+            <div class="avatar">C</div>
+            <div class="bubble">
+              抱歉，我不记得之前的那个项目——我没有跨会话的记忆，当前会话也没有找到相关的记忆文件。
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-footer">
+          用户不得不重新描述项目背景、目标和已完成的文件。
+        </div>
+      </div>
+    </div>
+
+    <div class="advantage-side">
+      <div class="advantage-header">
+        <h3>Hermes 的跨会话能力</h3>
+        <p>任务不是一次对话就结束，而是可以在多个会话、多个周期之间持续进行。</p>
+      </div>
+
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-icon">01</div>
+          <div>
+            <h4>项目上下文长期保留</h4>
+            <p>三天前提过的需求、生成的文件、设定的目标，今天继续聊时无需重新交代。</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">02</div>
+          <div>
+            <h4>任务可跨周期自动推进</h4>
+            <p>布置一项需要持续数天的任务，Hermes 会在指定时间继续执行并汇报进展。</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">03</div>
+          <div>
+            <h4>记忆越用越准</h4>
+            <p>从你的偏好、项目历史、反馈中学习，逐渐形成个性化的工作方式。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-callout">
+        对硬件 PM 来说，这意味着：<span class="accent">一个持续跟进的 AI 同事</span>，而不是每次都要从头解释的问答工具。
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">工具介绍 · Hermes 桌面端</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

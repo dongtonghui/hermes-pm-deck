@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>20 · 数据来源</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .top-area {
+    margin-bottom: 48px;
+  }
+  h2 {
+    font-size: 64px;
+    margin-bottom: 16px;
+  }
+  .subtitle {
+    font-size: 28px;
+    color: var(--ink-muted);
+    font-style: normal;
+  }
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+  }
+  .data-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 36px 28px;
+    box-shadow: 0 4px 20px rgba(28,27,24,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .data-card .icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: var(--accent-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: var(--accent-dark);
+    font-weight: 700;
+  }
+  .data-card h4 {
+    font-family: var(--font-body);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .data-card .desc {
+    font-size: var(--tiny);
+    line-height: 1.6;
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+  }
+  .data-card .metric {
+    font-family: var(--font-en);
+    font-size: var(--small);
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: auto;
+  }
+  .data-card .metric span {
+    color: var(--ink-muted);
+    font-weight: 400;
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>20 / 31 · 数据来源</div>
+  </div>
+
+  <div class="main">
+    <div class="top-area">
+      <div class="kicker">Data Sources</div>
+      <h2>多源数据<span class="accent">交叉验证</span></h2>
+      <p class="subtitle">不依赖单一信息源，从五个维度构建市场感知网络</p>
+    </div>
+
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="icon">1</div>
+        <h4>电商评论</h4>
+        <p class="desc">抓取京东、天猫、亚马逊等平台用户真实评价，提取痛点与未满足需求</p>
+        <div class="metric">~12K <span>条/月</span></div>
+      </div>
+      <div class="data-card">
+        <div class="icon">2</div>
+        <h4>行业报告</h4>
+        <p class="desc">IDC、Counterpoint、Gartner 等机构的季度出货量与趋势分析</p>
+        <div class="metric">~45 <span>份/季</span></div>
+      </div>
+      <div class="data-card">
+        <div class="icon">3</div>
+        <h4>竞品动态</h4>
+        <p class="desc">监测 TOP10 竞品的产品发布、功能更新、定价策略与渠道动作</p>
+        <div class="metric">~200 <span>条/周</span></div>
+      </div>
+      <div class="data-card">
+        <div class="icon">4</div>
+        <h4>搜索趋势</h4>
+        <p class="desc">百度指数、Google Trends、微信指数的关键词热度与关联查询</p>
+        <div class="metric">~500 <span>词/月</span></div>
+      </div>
+      <div class="data-card">
+        <div class="icon">5</div>
+        <h4>社媒讨论</h4>
+        <p class="desc">微博、小红书、Twitter、Reddit 的产品相关话题与 KOL 观点</p>
+        <div class="metric">~8K <span>帖/周</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">实战案例 · 市场机会洞察</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

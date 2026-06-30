@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>23 · 可复用性</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .top-area {
+    margin-bottom: 48px;
+  }
+  h2 {
+    font-size: 64px;
+    margin-bottom: 16px;
+  }
+  .subtitle {
+    font-size: 28px;
+    color: var(--ink-muted);
+    font-style: normal;
+  }
+  .reuse-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .reuse-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(28,27,24,0.05);
+  }
+  .reuse-card .card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .reuse-card .icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: var(--accent-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--accent-dark);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .reuse-card .card-title {
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .reuse-card .card-desc {
+    font-size: var(--small);
+    line-height: 1.6;
+    color: var(--ink-secondary);
+    margin-bottom: 24px;
+  }
+  .code-block {
+    background: var(--dark-block);
+    border-radius: 10px;
+    padding: 20px 24px;
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.9);
+    overflow-x: auto;
+  }
+  .code-block .comment {
+    color: rgba(255,255,255,0.45);
+  }
+  .code-block .keyword {
+    color: #ff7b72;
+  }
+  .code-block .string {
+    color: #a5d6ff;
+  }
+  .code-block .function {
+    color: #d2a8ff;
+  }
+  .benefits-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .benefits-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: var(--small);
+    line-height: 1.55;
+    color: var(--ink-secondary);
+  }
+  .benefits-list .check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .workflow-steps {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .workflow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+  .workflow-step .step-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    background: var(--paper-warm);
+    border: 2px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-en);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink-secondary);
+  }
+  .workflow-step .step-label {
+    font-size: var(--tiny);
+    color: var(--ink-muted);
+  }
+  .workflow-arrow {
+    font-size: 24px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>23 / 31 · 可复用性</div>
+  </div>
+
+  <div class="main">
+    <div class="top-area">
+      <div class="kicker">Reusability</div>
+      <h2>把分析流程<span class="accent">封装复用</span></h2>
+      <p class="subtitle">一次搭建，持续运行。把这次市场洞察变成可定时触发的自动化工作流。</p>
+    </div>
+
+    <div class="reuse-grid">
+      <div class="reuse-card">
+        <div class="card-header">
+          <div class="icon">1</div>
+          <div class="card-title">封装为 Skill</div>
+        </div>
+        <p class="card-desc">将数据抓取、清洗、评分、输出四步封装为 Hermes Skill，下次只需输入品类名称即可自动跑完全流程。</p>
+        <div class="code-block">
+          <span class="comment"># 调用示例</span><br>
+          <span class="keyword">@skill</span>(<span class="string">"market-opportunity"</span>)<br>
+          <span class="keyword">def</span> <span class="function">analyze</span>(category: <span class="string">"智能手表"</span>, period: <span class="string">"Q3"</span>):<br>
+          &nbsp;&nbsp;<span class="keyword">return</span> report, risks, next_steps
+        </div>
+      </div>
+
+      <div class="reuse-card">
+        <div class="card-header">
+          <div class="icon">2</div>
+          <div class="card-title">定时任务触发</div>
+        </div>
+        <p class="card-desc">设置每月第一个周一自动执行，报告直接推送到 Slack 频道与 Notion 数据库。</p>
+        <div class="workflow-steps">
+          <div class="workflow-step">
+            <div class="step-box">抓取</div>
+            <div class="step-label">数据更新</div>
+          </div>
+          <div class="workflow-arrow">→</div>
+          <div class="workflow-step">
+            <div class="step-box">评分</div>
+            <div class="step-label">矩阵运算</div>
+          </div>
+          <div class="workflow-arrow">→</div>
+          <div class="workflow-step">
+            <div class="step-box">生成</div>
+            <div class="step-label">报告产出</div>
+          </div>
+          <div class="workflow-arrow">→</div>
+          <div class="workflow-step">
+            <div class="step-box">推送</div>
+            <div class="step-label">多渠道分发</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reuse-card">
+        <div class="card-header">
+          <div class="icon">3</div>
+          <div class="card-title">带来的收益</div>
+        </div>
+        <ul class="benefits-list">
+          <li>
+            <span class="check">✓</span>
+            <span>PM 每周节省 4-6 小时手动收集与整理时间</span>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <span>机会发现从「季度回顾」变为「月度预警」</span>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <span>团队共享同一套评分标准，减少主观争论</span>
+          </li>
+          <li>
+            <span class="check">✓</span>
+            <span>历史数据可回溯，便于复盘预测准确率</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="reuse-card" style="background: var(--dark-block); border-color: transparent; color: #fff;">
+        <div class="card-header">
+          <div class="icon" style="background: var(--accent); color: #fff;">4</div>
+          <div class="card-title" style="color: #fff;">扩展场景</div>
+        </div>
+        <p class="card-desc" style="color: rgba(255,255,255,0.75);">同一套框架可复用到其他分析场景，只需替换数据源与评分权重。</p>
+        <ul class="benefits-list">
+          <li style="color: rgba(255,255,255,0.85);">
+            <span class="check" style="background: var(--accent-light);">✓</span>
+            <span>供应链风险监控（替换为供应商数据）</span>
+          </li>
+          <li style="color: rgba(255,255,255,0.85);">
+            <span class="check" style="background: var(--accent-light);">✓</span>
+            <span>竞品功能对标（替换为竞品发布数据）</span>
+          </li>
+          <li style="color: rgba(255,255,255,0.85);">
+            <span class="check" style="background: var(--accent-light);">✓</span>
+            <span>用户满意度追踪（替换为客服工单数据）</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">实战案例 · 市场机会洞察</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

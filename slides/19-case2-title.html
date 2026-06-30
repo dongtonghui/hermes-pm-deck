@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>18 · Case 2 章节封面</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body {
+    background: var(--dark-block);
+    color: #fff;
+  }
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .kicker-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-en);
+    font-size: var(--small);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 32px;
+  }
+  .kicker-dark::before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+  }
+  h1 {
+    font-size: 108px;
+    color: #fff;
+    margin-bottom: 32px;
+    line-height: 1.1;
+  }
+  h1 .accent {
+    color: var(--accent-light);
+  }
+  .subtitle {
+    font-size: 36px;
+    color: rgba(255,255,255,0.75);
+    font-style: normal;
+    max-width: 900px;
+    line-height: 1.45;
+  }
+  .case-label {
+    position: absolute;
+    top: 110px;
+    left: 64px;
+    font-family: var(--font-en);
+    font-size: var(--tiny);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+  .accent-pillar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    background: var(--accent);
+  }
+  .bottom-bar {
+    position: absolute;
+    bottom: 80px;
+    left: 64px;
+    right: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 24px;
+    font-size: var(--tiny);
+    color: rgba(255,255,255,0.5);
+  }
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-tag::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background: var(--accent);
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="accent-pillar"></div>
+  <div class="case-label">Case Study 02</div>
+
+  <div class="kicker-dark">Market Opportunity Insights</div>
+  <h1>市场<span class="accent">机会</span>洞察</h1>
+  <p class="subtitle">从数据噪音中找到产品机会</p>
+
+  <div class="bottom-bar">
+    <div class="section-tag">实战案例 · 市场机会洞察</div>
+    <div>Hermes 桌面端内部分享 · 18 / 31</div>
+  </div>
+</div>
+</body>
+</html>

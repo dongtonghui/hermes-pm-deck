@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>26 · AI + 写 PRD</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .left {
+    max-width: 720px;
+  }
+  .left h2 {
+    font-size: 64px;
+    margin-bottom: 20px;
+  }
+  .value-prop {
+    font-size: 28px;
+    color: var(--ink-secondary);
+    line-height: 1.5;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+  }
+  .scenario-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .scenario-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .scenario-num {
+    font-family: var(--font-en);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    min-width: 44px;
+  }
+  .scenario-text h4 {
+    font-family: var(--font-body);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .scenario-text p {
+    font-size: var(--small);
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    justify-content: center;
+  }
+  .prd-stage {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px 28px;
+    box-shadow: 0 4px 20px rgba(28,27,24,0.05);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .stage-num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-en);
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .stage-content h4 {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .stage-content p {
+    font-size: var(--tiny);
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+  .stage-arrow {
+    text-align: center;
+    color: var(--accent);
+    font-size: 22px;
+    font-weight: 700;
+    margin: 2px 0;
+  }
+  .checklist-preview {
+    background: var(--dark-block);
+    border-radius: 12px;
+    padding: 28px 32px;
+    color: #fff;
+    margin-top: 8px;
+  }
+  .checklist-preview h4 {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  .checklist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: var(--tiny);
+    color: rgba(255,255,255,0.85);
+  }
+  .check-box {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .check-box.checked::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>26 / 31 · 应用场景</div>
+  </div>
+
+  <div class="main">
+    <div class="left">
+      <div class="kicker">Product Requirements</div>
+      <h2>AI + <span class="accent">写 PRD</span></h2>
+      <p class="value-prop">从空白文档到结构化 PRD，让需求定义从「天级」缩短到「小时级」，且质量更稳定。</p>
+
+      <div class="scenario-list">
+        <div class="scenario-item">
+          <div class="scenario-num">01</div>
+          <div class="scenario-text">
+            <h4>结构生成与需求澄清</h4>
+            <p>输入一句话需求，AI 自动展开为完整 PRD 框架，并追问边界条件与验收标准。</p>
+          </div>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-num">02</div>
+          <div class="scenario-text">
+            <h4>历史 PRD 复用与对齐</h4>
+            <p>自动检索相似历史需求，提取可复用模块，标记冲突与依赖，保持文档一致性。</p>
+          </div>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-num">03</div>
+          <div class="scenario-text">
+            <h4>评审 Checklist 自动生成</h4>
+            <p>基于 PRD 内容自动生成评审清单，覆盖完整性、可测试性、风险点与资源评估。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="prd-stage">
+        <div class="stage-num">1</div>
+        <div class="stage-content">
+          <h4>输入一句话需求</h4>
+          <p>「支持多设备协同的跨屏剪贴板功能」</p>
+        </div>
+      </div>
+      <div class="stage-arrow">↓</div>
+      <div class="prd-stage">
+        <div class="stage-num">2</div>
+        <div class="stage-content">
+          <h4>AI 展开 PRD 框架</h4>
+          <p>背景、目标、用户场景、功能描述、边界条件、验收标准、风险与依赖</p>
+        </div>
+      </div>
+      <div class="stage-arrow">↓</div>
+      <div class="prd-stage">
+        <div class="stage-num">3</div>
+        <div class="stage-content">
+          <h4>追问与澄清</h4>
+          <p>「是否需要支持图片？最大传输大小？离线场景如何处理？」</p>
+        </div>
+      </div>
+      <div class="stage-arrow">↓</div>
+      <div class="prd-stage">
+        <div class="stage-num">4</div>
+        <div class="stage-content">
+          <h4>复用历史模块 + 生成评审清单</h4>
+          <p>自动插入网络模块复用段，输出 12 项评审 Checklist</p>
+        </div>
+      </div>
+
+      <div class="checklist-preview">
+        <h4>评审 Checklist 预览</h4>
+        <div class="checklist-items">
+          <div class="checklist-item">
+            <div class="check-box checked"></div>
+            <span>背景与目标是否清晰</span>
+          </div>
+          <div class="checklist-item">
+            <div class="check-box checked"></div>
+            <span>用户场景是否覆盖核心用例</span>
+          </div>
+          <div class="checklist-item">
+            <div class="check-box checked"></div>
+            <span>验收标准是否可测试</span>
+          </div>
+          <div class="checklist-item">
+            <div class="check-box"></div>
+            <span>边界条件与异常流程是否完整</span>
+          </div>
+          <div class="checklist-item">
+            <div class="check-box"></div>
+            <span>依赖项与风险是否已评估</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">应用场景 · PRD 撰写</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

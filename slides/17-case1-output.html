@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>17 · Reddit 输出样例</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content { display: flex; flex-direction: column; }
+  .main { flex: 1; display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: start; padding-top: 120px; }
+
+  .left-col { display: flex; flex-direction: column; gap: 32px; }
+  .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .metric-card {
+    background: #fff; border: 1px solid var(--line); border-radius: 16px;
+    padding: 28px; box-shadow: 0 6px 24px rgba(28,27,24,0.06);
+    position: relative; overflow: hidden;
+  }
+  .metric-card::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent);
+  }
+  .metric-card .num {
+    font-family: var(--font-display); font-size: 64px; font-weight: 900; color: var(--accent); line-height: 1;
+    margin-bottom: 8px;
+  }
+  .metric-card .label { font-size: var(--small); color: var(--ink-secondary); }
+  .metric-card .meta { font-size: var(--tiny); color: var(--ink-muted); margin-top: 12px; }
+
+  .chart-panel {
+    background: #fff; border: 1px solid var(--line); border-radius: 16px;
+    padding: 32px; box-shadow: 0 6px 24px rgba(28,27,24,0.06);
+  }
+  .chart-panel h4 { font-family: var(--font-body); font-size: 24px; margin-bottom: 24px; color: var(--ink); }
+  .bar-row { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+  .bar-label { width: 130px; font-size: var(--tiny); color: var(--ink-secondary); text-align: right; flex-shrink: 0; }
+  .bar-track { flex: 1; height: 22px; background: var(--paper-warm); border-radius: 11px; overflow: hidden; position: relative; }
+  .bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent-dark) 0%, var(--accent) 100%); border-radius: 11px; width: 0; transition: width 1.2s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .bar-value { width: 64px; font-size: var(--tiny); color: var(--ink); font-weight: 600; flex-shrink: 0; }
+
+  .right-col { display: flex; flex-direction: column; gap: 28px; }
+  .spectrum {
+    background: #fff; border: 1px solid var(--line); border-radius: 16px;
+    padding: 32px; box-shadow: 0 6px 24px rgba(28,27,24,0.06);
+  }
+  .spectrum h4 { font-family: var(--font-body); font-size: 24px; margin-bottom: 24px; color: var(--ink); }
+  .spectrum-bar {
+    height: 56px; border-radius: 12px; overflow: hidden; display: flex; margin-bottom: 20px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .spectrum-segment {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: #fff; font-size: 13px; font-weight: 700; text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    transition: flex 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .spectrum-segment span { font-size: 11px; font-weight: 400; opacity: 0.85; margin-top: 2px; }
+  .seg-oppose { background: #8B7355; }
+  .seg-hesitate { background: #B8A08A; }
+  .seg-accept { background: #D4845A; }
+  .seg-depend { background: var(--accent); }
+  .spectrum-legend { display: flex; justify-content: space-between; font-size: var(--tiny); color: var(--ink-muted); }
+
+  .quote-card {
+    background: var(--dark-block); color: #fff; border-radius: 16px; padding: 32px;
+    position: relative; box-shadow: 0 12px 40px rgba(28,27,24,0.18);
+  }
+  .quote-card::before {
+    content: """; position: absolute; top: 18px; left: 24px;
+    font-family: var(--font-display); font-size: 96px; color: rgba(255,255,255,0.12); line-height: 1;
+  }
+  .quote-card .quote-text {
+    font-family: var(--font-en); font-size: 23px; line-height: 1.5; color: rgba(255,255,255,0.95);
+    margin-bottom: 16px; position: relative; z-index: 1;
+  }
+  .quote-card .quote-trans {
+    font-size: var(--small); color: rgba(255,255,255,0.65); line-height: 1.55;
+    border-left: 3px solid var(--accent); padding-left: 16px; margin-bottom: 16px;
+  }
+  .quote-card .quote-tag {
+    display: inline-block; padding: 6px 12px; background: rgba(255,255,255,0.12);
+    border-radius: 6px; font-size: 13px; color: rgba(255,255,255,0.8);
+  }
+
+  .insight-pill {
+    background: var(--accent-pale); border: 1px solid var(--accent-light); border-radius: 12px;
+    padding: 18px 24px; font-size: var(--small); color: var(--accent-dark); font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>17 / 31 · Reddit 输出样例</div>
+  </div>
+
+  <div class="main">
+    <div class="left-col">
+      <div class="metrics">
+        <div class="metric-card">
+          <div class="num">473</div>
+          <div class="label">Membership 相关帖子</div>
+          <div class="meta">占 1000 篇扫描帖子的 47.3%</div>
+        </div>
+        <div class="metric-card">
+          <div class="num">319</div>
+          <div class="label">Membership 相关评论</div>
+          <div class="meta">占 1000 条扫描评论的 31.9%</div>
+        </div>
+      </div>
+
+      <div class="chart-panel">
+        <h4>r/Gardyn Membership 主题分布</h4>
+        <div class="bar-row">
+          <div class="bar-label">Kelby 订阅</div>
+          <div class="bar-track"><div class="bar-fill" data-width="92%"></div></div>
+          <div class="bar-value">83 · 35%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">价格/价值</div>
+          <div class="bar-track"><div class="bar-fill" data-width="72%"></div></div>
+          <div class="bar-value">60 · 25%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">推荐码/折扣</div>
+          <div class="bar-track"><div class="bar-fill" data-width="67%"></div></div>
+          <div class="bar-value">56 · 24%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">升级/购买决策</div>
+          <div class="bar-track"><div class="bar-fill" data-width="65%"></div></div>
+          <div class="bar-value">54 · 23%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">计费/退款</div>
+          <div class="bar-track"><div class="bar-fill" data-width="60%"></div></div>
+          <div class="bar-value">50 · 21%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">取消/退订</div>
+          <div class="bar-track"><div class="bar-fill" data-width="29%"></div></div>
+          <div class="bar-value">24 · 10%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">功能/权益</div>
+          <div class="bar-track"><div class="bar-fill" data-width="11%"></div></div>
+          <div class="bar-value">9 · 4%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">免费试用</div>
+          <div class="bar-track"><div class="bar-fill" data-width="7%"></div></div>
+          <div class="bar-value">6 · 3%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-col">
+      <div class="spectrum">
+        <h4>用户对 Kelby 订阅的态度光谱</h4>
+        <div class="spectrum-bar">
+          <div class="spectrum-segment seg-oppose" style="flex:25"><div>25%</div><span>强烈抵触</span></div>
+          <div class="spectrum-segment seg-hesitate" style="flex:35"><div>35%</div><span>犹豫观望</span></div>
+          <div class="spectrum-segment seg-accept" style="flex:30"><div>30%</div><span>接受使用</span></div>
+          <div class="spectrum-segment seg-depend" style="flex:10"><div>10%</div><span>高度依赖</span></div>
+        </div>
+        <div class="spectrum-legend">
+          <span>"Kelby is useless"</span>
+          <span>"Is it worth it?"</span>
+          <span>"trust in Kelby"</span>
+          <span>"I'm not experienced"</span>
+        </div>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-text">"AND NO I'm not paying $400 a year for Kelby when the machine itself should be able to do at least the basics of telling me about the water needing a refill."</div>
+        <div class="quote-trans">
+          用户愤怒点：$900 硬件 + $400/年订阅，但基础功能（水位通知）却被锁在订阅后。
+        </div>
+        <div class="quote-tag">价格与价值不匹配 · 高赞原声</div>
+      </div>
+
+      <div class="insight-pill">
+        关键洞察：近半数帖子讨论 membership，订阅模式本身就是社区最大争议点。
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">Case 1 · Reddit 抓取分析</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+
+<script>
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.width;
+    });
+  });
+</script>
+</body>
+</html>

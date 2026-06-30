@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>08 · Skills 生态</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .header {
+    margin-bottom: 40px;
+  }
+  .header h2 {
+    font-size: 72px;
+    margin-bottom: 16px;
+  }
+  .header .subtitle {
+    font-size: 28px;
+    color: var(--ink-secondary);
+    max-width: 960px;
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .info-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(28,27,24,0.05);
+  }
+  .info-card h4 {
+    font-family: var(--font-body);
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .info-card p {
+    font-size: 22px;
+    line-height: 1.6;
+    color: var(--ink-secondary);
+  }
+  .info-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .info-card ul li {
+    position: relative;
+    padding-left: 28px;
+    font-size: 22px;
+    line-height: 1.55;
+    color: var(--ink-secondary);
+  }
+  .info-card ul li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .example-card {
+    background: var(--accent-pale);
+    border: 1px solid var(--accent-light);
+    border-radius: 12px;
+    padding: 32px;
+  }
+  .example-card h4 {
+    font-family: var(--font-body);
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--accent-dark);
+  }
+  .example-card .example-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .example-card .example-item {
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--ink-secondary);
+  }
+  .example-card .example-item strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>08 / 31 · Skills</div>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <div class="kicker">Skills Ecosystem</div>
+      <h2>Skills <span class="accent">生态</span></h2>
+      <p class="subtitle">将个人经验沉淀为团队资产，让每次 AI 调用都达到专家水准。</p>
+    </div>
+
+    <div class="content-grid">
+      <div class="left-col">
+        <div class="info-card">
+          <h4>什么是 Skill</h4>
+          <p>Skill 是封装了提示词模板、知识库和输出格式的可复用能力模块。它把"如何写好一份 PRD"或"如何做竞品分析"的经验固化为可共享、可版本化的数字资产。</p>
+        </div>
+        <div class="info-card">
+          <h4>如何提升任务质量</h4>
+          <ul>
+            <li>结构化输入：定义必填字段与数据格式</li>
+            <li>示例驱动：提供 few-shot 示例引导输出风格</li>
+            <li>约束明确：限定输出长度、格式与审查标准</li>
+            <li>持续迭代：根据实际使用效果优化提示词</li>
+          </ul>
+        </div>
+      </div>
+      <div class="right-col">
+        <div class="example-card">
+          <h4>硬件 PM 常用 Skills</h4>
+          <div class="example-list">
+            <div class="example-item"><strong>PRD 生成器</strong> — 根据需求描述输出结构化产品文档</div>
+            <div class="example-item"><strong>竞品分析</strong> — 自动抓取竞品信息并生成对比矩阵</div>
+            <div class="example-item"><strong>用户故事拆分</strong> — 将史诗级需求拆分为可交付的用户故事</div>
+            <div class="example-item"><strong>供应链风险评估</strong> — 基于物料清单识别潜在供应风险</div>
+            <div class="example-item"><strong>会议纪要提取</strong> — 从录音或速记中提取决策项与行动项</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">Skills · 经验沉淀与复用</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

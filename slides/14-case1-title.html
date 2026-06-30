@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>13 · Case 1 — Reddit 抓取分析</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  body {
+    background: var(--dark-block);
+    color: #fff;
+  }
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+  .kicker-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-en);
+    font-size: var(--small);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 40px;
+  }
+  .kicker-light::before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+  }
+  h1 {
+    font-size: 120px;
+    color: #fff;
+    margin-bottom: 28px;
+    line-height: 1.08;
+  }
+  h1 .accent {
+    color: var(--accent-light);
+  }
+  .subtitle {
+    font-size: 42px;
+    color: rgba(255,255,255,0.75);
+    font-style: normal;
+    max-width: 1000px;
+    line-height: 1.45;
+    font-family: var(--font-body);
+    margin-bottom: 64px;
+  }
+  .data-watermark {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-bottom: 64px;
+  }
+  .watermark-item {
+    text-align: center;
+  }
+  .watermark-item .num {
+    font-family: var(--font-display);
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--accent-light);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .watermark-item .label {
+    font-size: var(--small);
+    color: rgba(255,255,255,0.55);
+  }
+  .case-meta {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    font-size: var(--small);
+    color: rgba(255,255,255,0.55);
+  }
+  .case-meta strong {
+    display: block;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: var(--body);
+  }
+  .accent-pillar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 18px;
+    background: var(--accent);
+  }
+  .subreddit-badge {
+    position: absolute;
+    top: 110px;
+    left: 64px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 999px;
+    font-size: var(--small);
+    color: rgba(255,255,255,0.8);
+  }
+  .subreddit-badge::before {
+    content: "";
+    width: 10px; height: 10px; background: #FF4500; border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="accent-pillar"></div>
+
+  <div class="subreddit-badge">r/Gardyn 室内种植机社区</div>
+
+  <div class="kicker-light">Case Study 01</div>
+  <h1>
+    Reddit <span class="accent">抓取分析</span>
+  </h1>
+  <p class="subtitle">以 Gardyn 会员订阅模式为例，从真实社区讨论中提取产品策略信号</p>
+
+  <div class="data-watermark">
+    <div class="watermark-item">
+      <div class="num">1,000</div>
+      <div class="label">扫描帖子</div>
+    </div>
+    <div class="watermark-item">
+      <div class="num">473</div>
+      <div class="label">Membership 相关帖</div>
+    </div>
+    <div class="watermark-item">
+      <div class="num">319</div>
+      <div class="label">相关评论</div>
+    </div>
+  </div>
+
+  <div class="case-meta">
+    <div>
+      <strong>场景</strong>
+      海外社区舆情监测
+    </div>
+    <div>
+      <strong>工具</strong>
+      Python + pullpush.io + AI 解析
+    </div>
+    <div>
+      <strong>周期</strong>
+      每周自动更新
+    </div>
+  </div>
+</div>
+</body>
+</html>

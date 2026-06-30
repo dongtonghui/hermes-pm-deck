@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>05 · AI 旧范式的局限</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .header {
+    margin-bottom: 48px;
+  }
+  .header h2 {
+    font-size: 72px;
+    margin-bottom: 16px;
+  }
+  .header .subtitle {
+    font-size: 28px;
+    color: var(--ink-secondary);
+    max-width: 900px;
+  }
+  .limitations-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .limit-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 36px;
+    box-shadow: 0 4px 20px rgba(28,27,24,0.05);
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .limit-card .number {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    min-width: 60px;
+  }
+  .limit-card .content h4 {
+    font-family: var(--font-body);
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .limit-card .content p {
+    font-size: 22px;
+    line-height: 1.6;
+    color: var(--ink-secondary);
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>05 / 31 · 旧范式</div>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <div class="kicker">Limitations</div>
+      <h2>AI 旧范式的<span class="accent">四大局限</span></h2>
+      <p class="subtitle">传统对话式 AI 在硬件产品工作场景中的瓶颈，促使我们寻找更高效的协作方式。</p>
+    </div>
+
+    <div class="limitations-grid">
+      <div class="limit-card">
+        <div class="number">01</div>
+        <div class="content">
+          <h4>上下文遗忘</h4>
+          <p>每次对话从零开始，项目背景、历史决策、用户画像无法持久化，导致重复说明。</p>
+        </div>
+      </div>
+      <div class="limit-card">
+        <div class="number">02</div>
+        <div class="content">
+          <h4>被动响应</h4>
+          <p>必须人工触发，无法主动执行周期性任务（日报生成、竞品监控、数据备份）。</p>
+        </div>
+      </div>
+      <div class="limit-card">
+        <div class="number">03</div>
+        <div class="content">
+          <h4>能力不可复用</h4>
+          <p>优秀提示词和经验无法沉淀，每次都要重新编写，团队难以共享最佳实践。</p>
+        </div>
+      </div>
+      <div class="limit-card">
+        <div class="number">04</div>
+        <div class="content">
+          <h4>单线程瓶颈</h4>
+          <p>复杂任务只能串行处理，无法并行委派多个子任务，效率受限于人工串联。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">旧范式 · 从对话到工作流</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

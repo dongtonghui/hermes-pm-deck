@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>06 · 新范式</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 72px;
+    align-items: center;
+  }
+  .left h2 {
+    font-size: 76px;
+    margin-bottom: 36px;
+  }
+  .left .body-large {
+    max-width: 620px;
+    margin-bottom: 40px;
+  }
+  .arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-en);
+    font-size: var(--small);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-top: 8px;
+  }
+  .arrow::after {
+    content: "→";
+    font-size: 28px;
+  }
+
+  .right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .mode-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 32px;
+    box-shadow: 0 6px 24px rgba(28,27,24,0.06);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .mode-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(28,27,24,0.1);
+  }
+  .mode-card .icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: var(--accent-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 18px;
+    color: var(--accent-dark);
+  }
+  .mode-card h4 {
+    font-family: var(--font-body);
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .mode-card p {
+    font-size: var(--tiny);
+    line-height: 1.55;
+    color: var(--ink-muted);
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>06 / 31 · 新范式</div>
+  </div>
+
+  <div class="main">
+    <div class="left">
+      <div class="kicker">Paradigm Shift</div>
+      <h2>把 AI 从<span class="accent">聊天框</span><br>升级为<span class="accent">工作伙伴</span></h2>
+      <p class="body-large">不再是一次性提问，而是把 AI 嵌入到日常流程中：调用技能、定时执行、委派子任务、持续记忆项目上下文。</p>
+      <div class="arrow">对话 → 工作流 → 自动化</div>
+    </div>
+
+    <div class="right">
+      <div class="mode-card">
+        <div class="icon">⚡</div>
+        <h4>Skills 增强</h4>
+        <p>把经验封装为可复用的能力模块，每次调用都按最佳实践执行。</p>
+      </div>
+      <div class="mode-card">
+        <div class="icon">⏱</div>
+        <h4>定时任务</h4>
+        <p>用自然语言设置周期性工作，让报告、监控、备份 unattended 运行。</p>
+      </div>
+      <div class="mode-card">
+        <div class="icon">✦</div>
+        <h4>委派子代理</h4>
+        <p>为复杂任务创建隔离子代理，各自保留上下文，降低干扰与成本。</p>
+      </div>
+      <div class="mode-card">
+        <div class="icon">↗</div>
+        <h4>主动搜索</h4>
+        <p>网络搜索、浏览器自动化、图片生成、多模态推理一站完成。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">新范式 · AI 作为工作伙伴</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

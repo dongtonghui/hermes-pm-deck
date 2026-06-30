@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>15 · 场景与目标</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content { display: flex; flex-direction: column; }
+  .main { flex: 1; display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: start; padding-top: 40px; }
+  .left h2 { font-size: 68px; margin-bottom: 32px; }
+  .context-block { margin-bottom: 40px; }
+  .context-block h4 { font-family: var(--font-body); font-size: 26px; font-weight: 700; margin-bottom: 16px; color: var(--ink); }
+  .context-block p { font-size: var(--small); line-height: 1.65; color: var(--ink-secondary); }
+  .right { display: flex; flex-direction: column; gap: 24px; }
+  .goal-card {
+    background: #fff; border: 1px solid var(--line); border-radius: 12px;
+    padding: 28px 32px; box-shadow: 0 4px 20px rgba(28,27,24,0.05);
+  }
+  .goal-card .label {
+    font-family: var(--font-en); font-size: var(--tiny); font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+  }
+  .goal-card h4 { font-family: var(--font-body); font-size: 24px; font-weight: 700; margin-bottom: 8px; color: var(--ink); }
+  .goal-card p { font-size: var(--tiny); line-height: 1.6; color: var(--ink-muted); }
+  .goal-card.accent { background: var(--accent-pale); border-color: var(--accent-light); }
+  .subreddit-header {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 8px 16px; background: rgba(196,92,38,0.1); border-radius: 999px;
+    font-size: var(--small); color: var(--accent-dark); font-weight: 600; margin-bottom: 24px;
+  }
+  .subreddit-header::before {
+    content: ""; width: 10px; height: 10px; background: #FF4500; border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>15 / 31 · 场景与目标</div>
+  </div>
+
+  <div class="main">
+    <div class="left">
+      <div class="kicker">Context & Goals</div>
+      <h2>为什么研究 <span class="accent">r/Gardyn</span>？</h2>
+
+      <div class="subreddit-header">Gardyn 室内种植机用户社区 · 1,000 帖 + 1,000 评论</div>
+
+      <div class="context-block">
+        <h4>订阅模式是社区核心争议</h4>
+        <p>在 1000 篇帖子中，473 篇与 membership/订阅/价格相关，说明 Gardyn 的 Kelby 订阅服务不是边缘话题，而是用户购买决策和留存的核心变量。</p>
+      </div>
+
+      <div class="context-block">
+        <h4>硬件 PM 的输入金矿</h4>
+        <p>用户在 Reddit 上直接表达价格敏感度、功能价值判断、取消原因、竞品对比。这些信号能帮助我们在自家产品上市前预判订阅策略风险。</p>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="goal-card accent">
+        <div class="label">Primary Goal</div>
+        <h4>理解用户对订阅的真实态度</h4>
+        <p>不是看官方宣传，而是从真实讨论中提取：抵触原因、犹豫点、愿意付费的场景、理想的分层模型。</p>
+      </div>
+
+      <div class="goal-card">
+        <div class="label">Output</div>
+        <h4>结构化洞察报告</h4>
+        <p>主题分布、态度光谱、典型原声、价格锚点、竞品替代方案，直接指导会员策略设计。</p>
+      </div>
+
+      <div class="goal-card">
+        <div class="label">Efficiency</div>
+        <h4>从人工浏览到自动周报</h4>
+        <p>将原本需要 2 天的社区浏览压缩为定时生成的报告，PM 只需审阅结论和关键 quote。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">Case 1 · Reddit 抓取分析</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

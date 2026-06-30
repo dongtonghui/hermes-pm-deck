@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>03 · 硬件 PM 的日常痛点</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content { display: flex; flex-direction: column; }
+  .main { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .left h2 { font-size: 80px; margin-bottom: 28px; }
+  .left .body-large { max-width: 620px; }
+  .right { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .pain {
+    background: #fff; border: 1px solid var(--line); border-radius: 14px;
+    padding: 30px; box-shadow: 0 4px 20px rgba(28,27,24,0.05);
+  }
+  .pain h4 { font-family: var(--font-body); font-size: 26px; margin-bottom: 12px; }
+  .pain p { font-size: var(--tiny); color: var(--ink-secondary); line-height: 1.6; }
+  .pain .tag {
+    display: inline-block; margin-top: 16px; padding: 5px 12px;
+    background: var(--accent-pale); color: var(--accent-dark);
+    border-radius: 999px; font-size: 14px; font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>03 / 31 · 痛点</div>
+  </div>
+  <div class="main">
+    <div class="left">
+      <div class="kicker">Pain Points</div>
+      <h2>硬件 PM 的<br><span class="accent">时间都去哪了</span></h2>
+      <p class="body-large">市场分析、用户洞察、PRD、原型验证——每一项都需要大量信息整合与重复性劳动。</p>
+    </div>
+    <div class="right">
+      <div class="pain">
+        <h4>信息分散</h4>
+        <p>Reddit、Discord、电商评论、行业报告散落在各处，手动收集耗时。</p>
+        <span class="tag">市场分析</span>
+      </div>
+      <div class="pain">
+        <h4>调研报告化</h4>
+        <p>用户访谈、问卷结果整理成洞察，往往要重复誊写和归类。</p>
+        <span class="tag">用户调研</span>
+      </div>
+      <div class="pain">
+        <h4>PRD 从零写</h4>
+        <p>每次写 PRD 都重新搭结构，格式不统一，历史文档难复用。</p>
+        <span class="tag">文档写作</span>
+      </div>
+      <div class="pain">
+        <h4>原型验证慢</h4>
+        <p>想做高保真原型验证想法，但设计资源排期长，容易错过窗口。</p>
+        <span class="tag">原型设计</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <div class="section-tag">开场</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>

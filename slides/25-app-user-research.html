@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>25 · AI + 用户调研</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/tokens.css">
+<style>
+  .slide-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .left {
+    max-width: 720px;
+  }
+  .left h2 {
+    font-size: 64px;
+    margin-bottom: 20px;
+  }
+  .value-prop {
+    font-size: 28px;
+    color: var(--ink-secondary);
+    line-height: 1.5;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+  }
+  .scenario-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .scenario-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .scenario-num {
+    font-family: var(--font-en);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    min-width: 44px;
+  }
+  .scenario-text h4 {
+    font-family: var(--font-body);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .scenario-text p {
+    font-size: var(--small);
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    justify-content: center;
+  }
+  .insight-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px 28px;
+    box-shadow: 0 4px 20px rgba(28,27,24,0.05);
+  }
+  .insight-card .insight-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .insight-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .insight-card .insight-label {
+    font-family: var(--font-en);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .insight-card .insight-body {
+    font-size: var(--small);
+    color: var(--ink-secondary);
+    line-height: 1.6;
+  }
+  .insight-card .insight-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  .insight-tag {
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: var(--accent-pale);
+    color: var(--accent-dark);
+  }
+  .persona-preview {
+    background: var(--dark-block);
+    border-radius: 12px;
+    padding: 28px 32px;
+    color: #fff;
+    margin-top: 8px;
+  }
+  .persona-preview h4 {
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  .persona-row {
+    display: flex;
+    gap: 16px;
+  }
+  .persona-pill {
+    flex: 1;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+  .persona-pill .pp-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 6px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .persona-pill .pp-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+<div class="slide-content">
+  <div class="page-masthead">
+    <div class="brand">AI 工具深度应用</div>
+    <div>25 / 31 · 应用场景</div>
+  </div>
+
+  <div class="main">
+    <div class="left">
+      <div class="kicker">User Research</div>
+      <h2>AI + <span class="accent">用户调研</span></h2>
+      <p class="value-prop">从「听用户说」到「听懂用户没说出口的」，让定性研究规模化、可量化。</p>
+
+      <div class="scenario-list">
+        <div class="scenario-item">
+          <div class="scenario-num">01</div>
+          <div class="scenario-text">
+            <h4>访谈转录与深度分析</h4>
+            <p>自动转录用户访谈，提取情感倾向、痛点聚类、需求优先级，生成洞察摘要。</p>
+          </div>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-num">02</div>
+          <div class="scenario-text">
+            <h4>问卷洞察与社区声音聚合</h4>
+            <p>分析开放式问卷与社区讨论，自动归类主题、识别高频关键词与情绪分布。</p>
+          </div>
+        </div>
+        <div class="scenario-item">
+          <div class="scenario-num">03</div>
+          <div class="scenario-text">
+            <h4>Persona 动态更新</h4>
+            <p>基于持续输入的用户数据，自动刷新用户画像，标记行为变化与需求演进。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="insight-card">
+        <div class="insight-header">
+          <div class="insight-dot"></div>
+          <div class="insight-label">Insight 01</div>
+        </div>
+        <div class="insight-body">
+          12 场访谈中，「续航焦虑」被提及 34 次，关联场景集中在「户外办公」与「差旅」。情感倾向：负面 68%，中性 24%，期待解决 8%。
+        </div>
+        <div class="insight-tags">
+          <span class="insight-tag">续航</span>
+          <span class="insight-tag">户外办公</span>
+          <span class="insight-tag">差旅</span>
+        </div>
+      </div>
+
+      <div class="insight-card">
+        <div class="insight-header">
+          <div class="insight-dot"></div>
+          <div class="insight-label">Insight 02</div>
+        </div>
+        <div class="insight-body">
+          社区讨论中「静音散热」话题热度上升 210%（近 3 个月），高频关键词：风扇噪音、夜间使用、图书馆场景。
+        </div>
+        <div class="insight-tags">
+          <span class="insight-tag">静音散热</span>
+          <span class="insight-tag">噪音</span>
+          <span class="insight-tag">夜间场景</span>
+        </div>
+      </div>
+
+      <div class="insight-card">
+        <div class="insight-header">
+          <div class="insight-dot"></div>
+          <div class="insight-label">Insight 03</div>
+        </div>
+        <div class="insight-body">
+          Persona 更新：「移动创作者」占比从 18% 上升至 31%，核心诉求从「性能」转向「便携 + 续航 + 屏幕素质」。
+        </div>
+        <div class="insight-tags">
+          <span class="insight-tag">移动创作者</span>
+          <span class="insight-tag">便携</span>
+          <span class="insight-tag">屏幕</span>
+        </div>
+      </div>
+
+      <div class="persona-preview">
+        <h4>Persona 动态更新示意</h4>
+        <div class="persona-row">
+          <div class="persona-pill">
+            <div class="pp-label">核心人群</div>
+            <div class="pp-value">移动创作者</div>
+          </div>
+          <div class="persona-pill">
+            <div class="pp-label">占比变化</div>
+            <div class="pp-value">18% → 31%</div>
+          </div>
+          <div class="persona-pill">
+            <div class="pp-label">优先级</div>
+            <div class="pp-value">续航 > 便携</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="section-tag">应用场景 · 用户调研</div>
+    <div>Hermes 桌面端内部分享</div>
+  </div>
+</div>
+</body>
+</html>
